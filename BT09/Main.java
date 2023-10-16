@@ -2,17 +2,18 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] agrs) {
-        input();
+        Scanner sc = new Scanner(System.in);
+        int[] arr = { 23, 1, 5, 22, 6, 8, 9, -3 };
+        System.out.print("Nhập lựa chọn của bạn:");
+        int n = sc.nextInt();
+        input(n, arr);
     }
 
     /**
      * 
      */
-    public static void input() {
-        Scanner sc = new Scanner(System.in);
-        int[] arr = { 23, 1, 5, 22, 6, 8, 9, -3 };
-        System.out.print("Nhập lựa chọn của bạn:");
-        int n = sc.nextInt();
+    public static void input(int n,int [] arr) {
+
         switch (n) {
             case 1: {
                 System.out.println("Result:" + cauB(arr));
@@ -54,7 +55,8 @@ public class Main {
                 System.out.println("Result:" + cauK(arr));
                 break;
             }
-            default : System.out.print("Nhập lại lựa chọn của bản");
+            default:
+                System.out.print("Nhập lại lựa chọn của bản");
         }
     }
 
