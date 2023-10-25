@@ -1,5 +1,5 @@
 import java.util.NoSuchElementException;
-
+// bài 1 và 2 giống nhau nên em làm 1 bài nha a
 public class Exercise1{
     private double a,b,c;
 

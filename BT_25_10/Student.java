@@ -38,7 +38,12 @@ public class Student {
     public void setTH(float tH) {
         TH = tH;
     }
-    public double dtb(float LT,float TH){
+    public double dtb(){
         return (LT+TH)/2;
     }
+    @Override
+    public String toString() {
+        return "Student [mssv=" + mssv + ", hoten=" + hoten + ", LT=" + LT + ", TH=" + TH + "]";
+    }
+    
 }

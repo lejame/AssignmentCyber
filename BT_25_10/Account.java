@@ -47,10 +47,9 @@ public class Account {
     public void setTien(double tien) {
         this.tien = tien;
     }
-
     @Override
     public String toString() {
-        return "Account [sotaikhoan=" + sotaikhoan + ", taikhoan=" + taikhoan + ", tien=" + tien + "]";
+        return "Account [sotaikhoan=" + this.sotaikhoan + ", taikhoan=" + this.taikhoan + ", tien=" + this.tien + "]";
     }
 
     public void naptien(float tiennap){
@@ -59,7 +58,7 @@ public class Account {
     }
 
     public float ruttien(float tienrut) {
-        if(this.tien<0) throw new NoSuchElementException("tai khoan khong du tien");
+        if(this.tien<tienrut) throw new NoSuchElementException("tai khoan khong du tien");
         this.tien = this.tien - (tienrut + phirut);
         return tienrut;
     }
@@ -67,7 +66,7 @@ public class Account {
     public void daohan(){
         this.tien = this.tien + this.tien*laisuat;
     }
-    //
+    // 
     public void chuyenkhoan(Account ac1,Account ac2,float tienchuyen){
         float tiensechuyen= ac1.ruttien(tienchuyen);
         ac2.naptien(tiensechuyen);
