@@ -1,4 +1,5 @@
 public class Exercise4 {
-    private long stk;
-    private String tk;
+    public static void main(String [] agrs){
+
+    }
 }

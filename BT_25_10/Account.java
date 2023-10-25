@@ -58,7 +58,7 @@ public class Account {
         System.out.println("Nap tien thanh cong");
     }
 
-    public float ruttien(int tienrut) {
+    public float ruttien(float tienrut) {
         if(this.tien<0) throw new NoSuchElementException("tai khoan khong du tien");
         this.tien = this.tien - (tienrut + phirut);
         return tienrut;
@@ -66,5 +66,10 @@ public class Account {
 
     public void daohan(){
         this.tien = this.tien + this.tien*laisuat;
+    }
+    //
+    public void chuyenkhoan(Account ac1,Account ac2,float tienchuyen){
+        float tiensechuyen= ac1.ruttien(tienchuyen);
+        ac2.naptien(tiensechuyen);
     }
 }
