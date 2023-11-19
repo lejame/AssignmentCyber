@@ -9,11 +9,11 @@ public class Main {
         while (!exit) {
             displayMenu();
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline character
+            scanner.nextLine();
 
             switch (choice) {
                 case 1:
-                    // inputCompanyInfo();
+                    inputCompanyInfo();
                     break;
                 case 2:
                     // assignEmployeeToManager();
@@ -37,13 +37,7 @@ public class Main {
                     }
                     break;
                 case 7:
-                    // Manager managerWithMostEmployees = company.findManagerWithMostEmployees();
-                    // if (managerWithMostEmployees != null) {
-                    //     System.out.println("Manager with the most employees:");
-                    //     System.out.println(managerWithMostEmployees);
-                    // } else {
-                    //     System.out.println("No managers in the company.");
-                    // }
+                    //
                     break;
                 case 8:
                     company.sortEmployeesByName();
@@ -62,6 +56,21 @@ public class Main {
         }
         scanner.close();
     }
+
+    public static void inputCompanyInfo() {
+        System.out.print("Enter company name: ");
+        String companyName = scanner.nextLine();
+        System.out.print("Enter tax code: ");
+        String taxCode = scanner.nextLine();
+        System.out.print("Enter monthly revenue: ");
+        double monthlyRevenue = scanner.nextDouble();
+        scanner.nextLine();
+
+        company.setCompanyName(companyName);
+        company.setTaxCode(taxCode);
+        company.setMonthlyRevenue(monthlyRevenue);
+    }
+
     private static void displayMenu() {
         System.out.println("Menu:");
         System.out.println("1. Enter company information");
@@ -75,5 +84,34 @@ public class Main {
         System.out.println("9. Sort employees by salary (descending)");
         System.out.println("0. Exit");
         System.out.print("Enter your choice: ");
+    }
+
+    private static void assignEmployeeToManager() {
+        company.printEmployeeInfo();
+
+        System.out.print("Enter the index of the manager: ");
+        int managerIndex = scanner.nextInt();
+        scanner.nextLine();
+
+        System.out.print("Enter the index of the employee: ");
+        int employeeIndex = scanner.nextInt();
+        scanner.nextLine();
+
+        if (managerIndex >= 0 && managerIndex < company.getEmployees().size() &&
+                employeeIndex >= 0 && employeeIndex < company.getEmployees().size()) {
+            Employee manager = company.getEmployees().get(managerIndex);
+            Employee employee = company.getEmployees().get(employeeIndex);
+            if (manager instanceof Manager && employee instanceof RegularEmployee) {
+                Manager castedManager = (Manager) manager;
+                RegularEmployee castedEmployee = (RegularEmployee) employee;
+                castedManager.addEmployeeUnderManagement(castedEmployee);
+                System.out.println("Employee successfully assigned to the manager.");
+            } else {
+                System.out.println(
+                        "Invalid assignment. Make sure the manager is a Manager and the employee is a RegularEmployee.");
+            }
+        } else {
+            System.out.println("Invalid index. Please enter valid indices for the manager and employee.");
+        }
     }
 }
