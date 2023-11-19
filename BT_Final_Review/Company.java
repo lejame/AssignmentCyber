@@ -12,6 +12,7 @@ public class Company {
     public Company() {
         employees = new ArrayList<>();
     }
+
     // khi nhập thông tin từ bàn phím , em set thông tin lại cho Company
     public void setCompanyName(String companyName) {
         this.companyName = companyName;
@@ -24,10 +25,12 @@ public class Company {
     public void setMonthlyRevenue(double monthlyRevenue) {
         this.monthlyRevenue = monthlyRevenue;
     }
+
     // thêm 1 nhân viên mới
     public void addEmployee(Employee employee) {
         employees.add(employee);
     }
+
     // xóa 1 nhân viên
     public void removeEmployee(Employee employee) {
         employees.remove(employee);
@@ -36,6 +39,7 @@ public class Company {
     public List<Employee> getEmployees() {
         return employees;
     }
+
     // xuất thông tin nhân viên
     public void printEmployeeInfo() {
         if (employees.isEmpty()) {
@@ -48,6 +52,7 @@ public class Company {
             }
         }
     }
+
     // tính xuất tổng số lương cửa tường nhân viên
     public void calculateAndPrintTotalSalary() {
         double totalSalary = 0;
@@ -56,6 +61,7 @@ public class Company {
         }
         System.out.println("Total salary for all employees: " + totalSalary);
     }
+
     // tìm nhân viên có số lương cao nhất
     public Employee findEmployeeWithHighestSalary() {
         if (employees.isEmpty()) {
@@ -74,7 +80,9 @@ public class Company {
 
         return highestPaidEmployee;
     }
-    // sắp xếp nhân viên theo tên, Em dùng hàm compator để so sánh cho 2 đối tượng nhân viên 1 và nhan viên 2
+
+    // sắp xếp nhân viên theo tên, Em dùng hàm compator để so sánh cho 2 đối tượng
+    // nhân viên 1 và nhan viên 2
     public void sortEmployeesByName() {
         Collections.sort(employees, new Comparator<Employee>() {
             @Override
@@ -86,5 +94,14 @@ public class Company {
         });
         System.out.println("Employees sorted by salary (descending order):");
         printEmployeeInfo();
+    }
+    // Sắp xếp nhân viên theo lương giảm dần
+    public void sortEmployeesBySalaryDescending() {
+        Collections.sort(employees, new Comparator<Employee>() {
+            @Override
+            public int compare(Employee employee1, Employee employee2) {
+                return Double.compare(employee2.calculateMonthlySalary(), employee1.calculateMonthlySalary());
+            }
+        });
     }
 }
