@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container_fluid {
+            position: relative;
+            width: 100%;
+        }
+
+        .container_fluid.header_text {
+            background: rgb(9, 116, 121);
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .container_fluid.header_text p {
+            justify-content: right;
+            margin: 0;
+        }
+
+        body {
+            padding-top: 10px;
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-size: larger;
+            color: gray;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin-right: 5px;
+        }
+
+        nav .nav_list {
+            display: flex;
+            /* Sử dụng flexbox */
+            justify-content: space-between;
+            /* Đặt khoảng cách giữa các phần tử */
+            align-items: flex-end;
+            /* Đưa các phần tử về phía dưới */
+        }
+
+        img.full_width {
+            width: 100%;
+            max-width: 100%;
+            height: 30vh;
+
+        }
+        .image-text {
+            position: absolute;
+            top: 20%;
+            /* Điều chỉnh vị trí dọc */
+            left: 50%;
+            /* Điều chỉnh vị trí ngang */
+            transform: translate(-50%, -50%);
+            /* Dịch chuyển văn bản đến chính giữa */
+            background: rgba(0, 0, 0, 0.7);
+            /* Tạo background mờ */
+            padding: 10px;
+            /* Điều chỉnh padding */
+            color: #ccc;
+        }
+
+        .container {
+            width: 80%;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
+        .form_wrapper {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .form_centent {
+            width: 30%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .form_centent input {
+            border: 2px solid #ccc;
+            width: 40%;
+            height: 30px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<header>
+    <div class="container_fluid header_text">
+        <p style="color: white;">Contact lehuuloi823@gmail.com</p>
+    </div>
+</header>
+
+<body>
+    <nav>
+        <h2 style="color: rgb(44, 115, 115);">
+            UK
+            <span style="color: black;">Hospital</span>
+        </h2>
+        <div class="nav_list">
+            <a href="">Home</a>
+            <a href="">About</a>
+            <a href="">Service</a>
+            <a href="">Doctor</a>
+            <a href="">Contact</a>
+        </div>
+    </nav>
+    <br>
+    <!-- End Navbar -->
+    <div class="image-container">
+        <img class="full_width"
+            src="https://tinviet365.net/wp-content/uploads/2020/03/66-%E1%BA%A2nh-n%E1%BB%81n-m%C3%A1y-t%C3%ADnh-%C4%91%E1%BA%B9p-nh%E1%BA%A5t-hi%E1%BB%87n-nay-Full-HD-c%C3%B3-link-t%E1%BA%A3i-v%E1%BB%81.jpg"
+            alt="">
+        <div class="image-text">
+            <p>Hello, loi</p>
+        </div>
+    </div>
+
+    <div class="container body_content">
+        <p>We are medical center</p>
+        <P style="font-weight: bold;">We Have Medicare Plan Options for You!</P>
+        <p>Phasellus pretium orci sit amet mi ullamcorper egestas. Sed non mattis metus. Integer vel lorem tincidunt,
+            pharetra eros nec, posuere odio. Nullam eget bibendum
+            sem, venenatis lacinia justo. Duis aliquet lobortis neque, eget volutpat nulla iaculis a.</p>
+        <p>In hac habitasse platea dictumst. Praesent condimentum justo justo, at ultricies diam accumsan vitae. Donec
+            ac elementum diam. Ut quam orci, posuere quis lacus
+            sed, vehicula rhoncus massa. Nunc volutpat nibh nulla, tincidunt egestas tellus faucibus nec.</p>
+        <ul>
+            <li>Nulla venenatis auctor quam, ac porta lectus dictum in</li>
+            <li>Aliquam sodales nisi sit amet lorem</li>
+            <li>Suspendisse vulputate tellus in justo convallis imperdiet</li>
+            <li>Morbi id lorem consequat, sodales mi non</li>
+            <li>Nulla venenatis auctor quam, ac porta lectus dictum in</li>
+        </ul>
+    </div>
+
+    <hr>
+    <div class="form_wrapper">
+        <div class="form_centent">
+            <form action="">
+                <input type="text" name="name" placeholder="Fisrt Name">
+                <input type="email" name="email" placeholder="Last Name">
+                <input type="email" name="email" placeholder="Email Id">
+                <input type="email" name="email" placeholder="Mobile No">
+                <select style="width: 40%; height: 30px; margin-right: 5px;">
+                    <option value="">--Sex--</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <input type="text" placeholder="Appointment date">
+                <textarea name="" id="" cols="30" rows="10" style="width: 82%;"></textarea>
+                <input type="submit" value="SUBMIT" style="width: 84%; color: #ccc; background: rgb(13, 100, 82);">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html
