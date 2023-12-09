@@ -1,0 +1,65 @@
+header {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.navbar_list {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.navbar_list select {
+    height: fit-content;
+    border-radius: 5px;
+    color: gray;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.navbar_list select option {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.header_logo {
+    display: flex;
+    justify-content: center;
+}
+
+.navbar_list a {
+    text-decoration: none;
+    margin-right: 10px;
+    color: gray;
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar_list :hover {
+    color: black;
+}
+
+.navbar_list a span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+body img {
+    height: 90vh;
+    width: 100vh;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Thêm các thuộc tính kiểu dáng khác nếu cần */
+    color: rgb(6, 6, 6);
+    padding: 20px;
+}
