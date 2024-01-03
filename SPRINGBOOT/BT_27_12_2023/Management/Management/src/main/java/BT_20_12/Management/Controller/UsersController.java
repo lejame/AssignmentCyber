@@ -2,6 +2,7 @@ package BT_20_12.Management.Controller;
 
 import BT_20_12.Management.Entity.UsersEntity;
 import BT_20_12.Management.Services.UsersService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,18 +27,32 @@ public class UsersController {
         return "login";
     }
     @PostMapping("/login_action")
-    public RedirectView form_login(@RequestParam("email") String email, @RequestParam("password") String password, Model model) {
-        System.out.print(email + password);
+    public RedirectView form_login(HttpSession httpSession, @RequestParam("email") String email, @RequestParam("password") String password, Model model) {
         UsersEntity user = usersService.getUsersEntityByEmailAndAndPassword(email, password);
         if (user == null) {
             return new RedirectView("/login_error");
         }
+        httpSession.setAttribute("email",email);
+        httpSession.setMaxInactiveInterval(8*60*60);
         return new RedirectView("/home");
     }
 
     @GetMapping("/home")
     public String Home() {
         return "index";
+    }
+
+
+    // sử dụng cookie và session hoặc là database để lưu lại thông tin của client
+
+    @GetMapping("/profile_user")
+    public String profileUser(Model model){
+        return "profile";
+    }
+
+    @GetMapping("/profile_user_edit")
+    public String profileUserEdit(Model model){
+        return "profile-edit";
     }
 
 }
