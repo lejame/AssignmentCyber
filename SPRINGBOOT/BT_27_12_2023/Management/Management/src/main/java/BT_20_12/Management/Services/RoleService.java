@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class RoleService{
     @Autowired
@@ -19,5 +21,8 @@ public class RoleService{
         rolesRepository.save(new RolesEntity(name,description));
         isSuccess = true;
         return isSuccess;
+    }
+    public List<RolesEntity> getListRole(){
+        return rolesRepository.findAll();
     }
 }

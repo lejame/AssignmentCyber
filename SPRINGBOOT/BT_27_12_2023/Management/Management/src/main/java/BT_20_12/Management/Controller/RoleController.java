@@ -16,7 +16,8 @@ public class RoleController {
     public RoleService roleService;
 
     @GetMapping("/form_role_table")
-    public String role_table(){
+    public String role_table(Model model){
+        model.addAttribute("role_information",roleService.getListRole());
         return "role-table";
     }
     @GetMapping("/form_add")
