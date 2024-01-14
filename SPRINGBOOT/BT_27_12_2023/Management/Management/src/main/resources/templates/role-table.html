@@ -119,6 +119,12 @@
         </div>
         <!-- Left navbar-header end -->
         <!-- Page Content -->
+        <div th:if="${notice_error}" style="color: red;justify-content: center; text-align: center">
+            <p>Quyền của người dùng đã đươc sử dụng hãy điều chỉnh sau đó xóa</p>
+        </div>
+        <div th:if="${notice_success}" style="color: lawngreen;justify-content: center; text-align: center">
+            <p>Xóa thành công</p>
+        </div>
         <div id="page-wrapper">
             <div class="container-fluid">
                 <div class="row bg-title">
@@ -150,8 +156,8 @@
                                             <td th:text = "${role.getName()}"></td>
                                             <td th:text = "${role.getDescription()}"></td>
                                             <td>
-                                                <a href="#" class="btn btn-sm btn-primary">Sửa</a>
-                                                <a href="#" class="btn btn-sm btn-danger">Xóa</a>
+                                                <a  class="btn btn-sm btn-primary">Sửa</a>
+                                                <a th:href="@{/role/delete/{id}(id = ${role.getId()})}" class="btn btn-sm btn-danger">Xóa</a>
                                             </td>
                                         </tr>
                                     </tbody>

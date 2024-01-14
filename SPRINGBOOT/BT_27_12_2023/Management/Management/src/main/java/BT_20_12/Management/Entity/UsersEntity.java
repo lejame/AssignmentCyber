@@ -87,7 +87,9 @@ public class UsersEntity {
         this.avatar = avatar;
     }
 
-
+    public RolesEntity getRolesEntity() {
+        return rolesEntity;
+    }
 
     @Override
     public boolean equals(Object o) {
