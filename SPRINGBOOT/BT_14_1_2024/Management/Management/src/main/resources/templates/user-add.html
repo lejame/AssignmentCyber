@@ -124,13 +124,15 @@
                         <h4 class="page-title">Thêm mới thành viên</h4>
                     </div>
                 </div>
+                <div th:if = "${notice_check}" style="color:red">Kiểm tra lại thông </div>
+                <div th:if = "${notice_success}" style="color: green">Thêm thành công</div>
                 <!-- /.row -->
                 <!-- .row -->
                 <div class="row">
                     <div class="col-md-2 col-12"></div>
                     <div class="col-md-8 col-xs-12">
                         <div class="white-box">
-                            <form class="form-horizontal form-material">
+                            <form class="form-horizontal form-material" method="post" th:action="@{/user/add_user}">
                                 <div class="form-group">
                                     <label class="col-md-12">Full Name</label>
                                     <div class="col-md-12">
@@ -159,19 +161,25 @@
                                 <div class="form-group">
                                     <label class="col-sm-12">Select Country</label>
                                     <div class="col-sm-12">
-                                        <select class="form-control form-control-line">
-                                            <option>London</option>
-                                            <option>India</option>
-                                            <option>Usa</option>
-                                            <option>Canada</option>
-                                            <option>Thailand</option>
+                                        <select class="form-control form-control-line" name="country">
+                                            <option th:each="c : ${countries}" th:value="${c}" th:text="${c}" th:selected="${c == selectedCountry}" th:name="${c}"></option>
                                         </select>
                                     </div>
+
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-12">Select Role</label>
+                                    <div class="col-sm-12">
+                                        <select class="form-control form-control-line" name="role">
+                                            <option th:each="r : ${list_role}" th:value="${r.getName()}" th:text="${r.getName()}"  th:name="${r.getName()}"></option>
+                                        </select>
+                                    </div>
+
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-12">
                                         <button type="submit" class="btn btn-success">Add User</button>
-                                        <a href="user-table.html" class="btn btn-primary">Quay lại</a>
+                                        <a th:href="@{/user/form_user}" class="btn btn-primary">Quay lại</a>
                                     </div>
                                 </div>
                             </form>

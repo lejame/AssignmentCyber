@@ -41,12 +41,26 @@ public class UsersEntity {
     @Column(name = "fullname")
     private String fullname;
     @Basic
+    @Column(name = "phonenumber")
+    private String phonenumber;
+    @Basic
+    @Column(name = "country")
+    private String country;
+    @Basic
     @Column(name = "avatar")
     private String avatar;
     @ManyToOne
     @JoinColumn(name = "role_id")
     private RolesEntity rolesEntity;
 
+    public UsersEntity(String email,String password,String fullname,String phonenumber,String country,RolesEntity role){
+        this.email = email;
+        this.password = password;
+        this.fullname = fullname;
+        this.phonenumber = phonenumber;
+        this.country = country;
+        this.rolesEntity = role;
+    }
     public int getId() {
         return id;
     }
@@ -70,6 +84,10 @@ public class UsersEntity {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public String getPhonenumber(){return phonenumber;}
+
+    public String getCountry(){return country;}
 
     public String getFullname() {
         return fullname;

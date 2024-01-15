@@ -35,4 +35,10 @@ public class RoleService{
         }
         return false;
     }
+    public List<RolesEntity> getRole(){
+        return rolesRepository.findAll();
+    }
+    public RolesEntity findRoleByName(String name){
+        return rolesRepository.findByName(name);
+    }
 }

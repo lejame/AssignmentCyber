@@ -1,5 +1,6 @@
 package BT_20_12.Management.Services;
 
+import BT_20_12.Management.Entity.RolesEntity;
 import BT_20_12.Management.Entity.UsersEntity;
 import BT_20_12.Management.Repository.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import java.util.List;
 public class UsersService {
     @Autowired
     private final UsersRepository usersRepository;
+
     public UsersService(UsersRepository usersRepository){
         this.usersRepository = usersRepository;
     }
@@ -26,5 +28,9 @@ public class UsersService {
             }
         }
         return false;
+    }
+    public Boolean addnewMenber(String fullname, String email, String passwrod, String phonenumber, String country, RolesEntity role){
+        usersRepository.save(new UsersEntity(email,email,fullname,phonenumber,country,role));
+        return true;
     }
 }

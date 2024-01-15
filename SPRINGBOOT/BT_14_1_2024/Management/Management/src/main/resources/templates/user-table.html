@@ -7,20 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" th:href="@{/plugins/images/favicon.png}">
     <title>Pixel Admin</title>
     <!-- Bootstrap Core CSS -->
-    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link th:href="@{/bootstrap/dist/css/bootstrap.min.css}" rel="stylesheet">
     <!-- Menu CSS -->
-    <link href="plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
+    <link th:href="@{/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
     <!-- animation CSS -->
-    <link href="css/animate.css" rel="stylesheet">
+    <link th:href="@{/css/animate.css}" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="css/style.css" rel="stylesheet">
+    <link th:href="@{/css/style.css}" rel="stylesheet">
     <!-- color CSS -->
-    <link href="css/colors/blue-dark.css" id="theme" rel="stylesheet">
-    <link rel="stylesheet" href="./css/custom.css">
+    <link th:href="@{/css/colors/blue-dark.css}" id="theme" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/custom.css}">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -44,10 +44,10 @@
                     <div class="top-left-part">
                         <a class="logo" href="index.html">
                             <b>
-                                <img src="plugins/images/pixeladmin-logo.png" alt="home" />
+                                <img th:src="@{/plugins/images/pixeladmin-logo.png}" alt="home" />
                             </b>
                             <span class="hidden-xs">
-                                <img src="plugins/images/pixeladmin-text.png" alt="home" />
+                                <img th:src="@{/plugins/images/pixeladmin-text.png}" alt="home" />
                             </span>
                         </a>
                     </div>
@@ -65,7 +65,7 @@
                         <li>
                             <div class="dropdown">
                                 <a class="profile-pic dropdown-toggle" data-toggle="dropdown" href="#"> 
-                                    <img src="plugins/images/users/varun.jpg" alt="user-img" width="36" class="img-circle" />
+                                    <img th:src="@{/plugins/images/users/varun.jpg}" alt="user-img" width="36" class="img-circle" />
                                     <b class="hidden-xs">Cybersoft</b> 
                                 </a>
                                 <ul class="dropdown-menu">
@@ -126,7 +126,7 @@
                         <h4 class="page-title">Danh sách thành viên</h4>
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12 text-right">
-                        <a href="user-add.html" class="btn btn-sm btn-success">Thêm mới</a>
+                        <a th:href="@{/user/form_add}" class="btn btn-sm btn-success">Thêm mới</a>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
@@ -306,18 +306,18 @@
     </div>
     <!-- /#wrapper -->
     <!-- jQuery -->
-    <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
+    <script th:src="@{/plugins/bower_components/jquery/dist/jquery.min.js}"></script>
     <!-- Bootstrap Core JavaScript -->
-    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+    <script th:src="@{/bootstrap/dist/js/bootstrap.min.js}"></script>
     <!-- Menu Plugin JavaScript -->
-    <script src="plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
+    <script th:src="@{/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js}"></script>
     <!--slimscroll JavaScript -->
-    <script src="js/jquery.slimscroll.js"></script>
-    <script src="js/jquery.dataTables.js"></script>
+    <script th:src="@{/js/jquery.slimscroll.js}"></script>
+    <script th:src="@{/js/jquery.dataTables.js}"></script>
     <!--Wave Effects -->
-    <script src="js/waves.js"></script>
+    <script th:src="@{/js/waves.js}"></script>
     <!-- Custom Theme JavaScript -->
-    <script src="js/custom.min.js"></script>
+    <script th:src="@{/js/custom.min.js}"></script>
     <script>
         $(document).ready(function () {
             $('#example').DataTable();
