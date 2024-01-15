@@ -1,5 +1,6 @@
 package BT_20_12.Management.Entity;
 import jakarta.persistence.*;
+import lombok.Getter;
 /*
 có 4 quan hệ
 One to One: 1 dòng dữ liệu bên này chỉ lẩy được 1 dòng dữ liệu bên kia
@@ -25,6 +26,7 @@ Many to Many: Nhiều dòng dữ liệu bên này chỉ lẩy được nhiều d
 * */
 
 @Entity
+@Getter
 @Table(name = "users", schema = "crm_app", catalog = "")
 public class UsersEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -61,6 +63,11 @@ public class UsersEntity {
         this.country = country;
         this.rolesEntity = role;
     }
+
+    public UsersEntity() {
+
+    }
+
     public int getId() {
         return id;
     }
@@ -85,7 +92,6 @@ public class UsersEntity {
         this.password = password;
     }
 
-    public String getPhonenumber(){return phonenumber;}
 
     public String getCountry(){return country;}
 
@@ -93,9 +99,6 @@ public class UsersEntity {
         return fullname;
     }
 
-    public void setFullname(String fullname) {
-        this.fullname = fullname;
-    }
 
     public String getAvatar() {
         return avatar;

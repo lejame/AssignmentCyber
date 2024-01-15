@@ -30,7 +30,10 @@ public class UsersService {
         return false;
     }
     public Boolean addnewMenber(String fullname, String email, String passwrod, String phonenumber, String country, RolesEntity role){
-        usersRepository.save(new UsersEntity(email,email,fullname,phonenumber,country,role));
+        usersRepository.save(new UsersEntity(email,passwrod,fullname,phonenumber,country,role));
         return true;
+    }
+    public List<UsersEntity> getAllUser(){
+        return usersRepository.findAll();
     }
 }

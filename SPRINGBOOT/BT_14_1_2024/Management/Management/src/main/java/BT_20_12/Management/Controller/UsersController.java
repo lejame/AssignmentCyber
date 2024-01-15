@@ -2,6 +2,7 @@ package BT_20_12.Management.Controller;
 
 
 import BT_20_12.Management.Entity.RolesEntity;
+import BT_20_12.Management.Entity.UsersEntity;
 import BT_20_12.Management.Services.RoleService;
 import BT_20_12.Management.Services.UsersService;
 
@@ -39,7 +40,13 @@ public class UsersController {
 
     @GetMapping("/form_user")
     public String formUser(Model model) {
+        List<UsersEntity> list_user = usersService.getAllUser();
+        if(list_user.isEmpty()){
+            return "user-table";
+        }
+        model.addAttribute("list_user",list_user);
         return "user-table";
+
     }
 
     @GetMapping("/form_add")
